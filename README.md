@@ -60,7 +60,7 @@ FileManager.write("example.txt", "Hello, world!")
 BinaryFileManager.write("example.bin", b'\x00\x01\x02')
 ```
 
-### Usage with `not_gitmodules`:
+### Usage with `gitmodules`:
 For `gitmodules`, follow the usual steps to add the repository as a submodule to your project and use it as needed.
 
 ---
