@@ -47,7 +47,7 @@ With `not_gitmodules`, the file manager module can be easily added to your proje
 1. Modify not_gitmodules.yaml file.
 
 ```yaml
-file_manager_module: https://github.com/Armen-Jean-Andreasian/notgitmodules-file-manager
+file_manager_module: https://github.com/Armen-Jean-Andreasian/notgitmodules-file-manager-py
 ```
 
 2. Install
