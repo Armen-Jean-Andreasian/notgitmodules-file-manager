@@ -107,25 +107,26 @@ class BinaryFileManager(Protocol):
 - For MyPy you need:
 
 ```python
-from typing import Protocol, Callable
+from typing import Protocol
 
-class BinaryFileManager(Protocol):    
-    def read(self, filepath: str) -> bytes:
+
+class BinaryFileManager(Protocol):
+    def read(self, file_path: str) -> bytes:
         ...
 
-    def write(self, filepath: str, data: bytes) -> None:
+    def write(self, file_path: str, content: bytes) -> None:
         ...
 
-    def append(self, filepath: str, data: bytes) -> None:
+    def append(self, file_path: str, content: bytes) -> None:
         ...
 
-    def exclusive_append(self, filepath: str, data: bytes) -> None:
+    def exclusive_append(self, file_path: str, content: bytes) -> None:
         ...
 
-    def delete(self, filepath: str) -> None:
+    def delete(self, file_path: str) -> None:
         ...
 
-    def move(self, src_filepath: str, dest_filepath: str) -> None:
+    def move(self, file_path: str, destination: str) -> None:
         ...
 ```
 
