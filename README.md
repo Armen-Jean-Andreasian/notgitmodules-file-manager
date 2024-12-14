@@ -1,4 +1,9 @@
-# FileManager [Not-gitmodule]
+# FileManager [Not Gitmodule]
+
+---
+## What's Not Gitmodule?
+
+[Read](https://github.com/Armen-Jean-Andreasian/not_gitmodules)
 
 ---
 ## Core Functionality
