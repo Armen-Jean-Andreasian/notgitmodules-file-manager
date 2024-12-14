@@ -68,6 +68,67 @@ BinaryFileManager.write("example.bin", b'\x00\x01\x02')
 ### Usage with `gitmodules`:
 For `gitmodules`, follow the usual steps to add the repository as a submodule to your project and use it as needed.
 
+
+## Typehint
+
+As this is a module you may be need to typehint. 
+
+- For CPython it's pretty straightforward
+
+```python
+# implementation 1
+from typing import Protocol, Callable
+
+
+class BinaryFileManager(Protocol):
+    read: Callable
+    write: Callable
+    append: Callable
+    exclusive_append: Callable
+    delete: Callable
+    move: Callable
+```
+
+or you wish you can mention the args as well in Callable:
+
+```python
+# implementation 2
+from typing import Protocol, Callable
+
+class BinaryFileManager(Protocol):
+    read: Callable[[str], bytes]
+    write: Callable[[str, bytes], None]
+    append: Callable[[str, bytes], None]
+    exclusive_append: Callable[[str, bytes], None]
+    delete: Callable[[str], None]
+    move: Callable[[str, str], None]
+```
+
+- For MyPy you need:
+
+```python
+from typing import Protocol, Callable
+
+class BinaryFileManager(Protocol):    
+    def read(self, filepath: str) -> bytes:
+        ...
+
+    def write(self, filepath: str, data: bytes) -> None:
+        ...
+
+    def append(self, filepath: str, data: bytes) -> None:
+        ...
+
+    def exclusive_append(self, filepath: str, data: bytes) -> None:
+        ...
+
+    def delete(self, filepath: str) -> None:
+        ...
+
+    def move(self, src_filepath: str, dest_filepath: str) -> None:
+        ...
+```
+
 ---
 
 ## P.S.
